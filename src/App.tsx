@@ -8,7 +8,9 @@ function App() {
 
   return (
     <AppProvider>
-      <RouterComponent />
+      <div className="min-h-screen">
+        <RouterComponent />
+      </div>
     </AppProvider>
 
   )
