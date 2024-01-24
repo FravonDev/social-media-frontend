@@ -2,7 +2,7 @@ import { ReactNode, createContext, useState } from "react";
 import api from "../services/http/axios";
 import { useQuery } from "@tanstack/react-query";
 import { SimpleUser } from "../interfaces";
-import { AxiosError } from "axios";
+import axios from "axios";
 
 
 interface AuthProviderProps {
@@ -58,10 +58,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             const { data } = await api.get<SimpleUser>('accounts/summary');
             setUser(data);
 
-        } catch (error: any) {
-            if (error.response?.status === 401) {
-                logout();
-                return;
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                if (error.response?.status === 401) {
+                    logout();
+                    return;
+                }
             }
             console.log(error);
         }
