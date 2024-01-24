@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             const { data } = await api.get<SimpleUser>('accounts/summary');
             setUser(data);
 
-        } catch (error: AxiosError) {
+        } catch (error: any) {
             if (error.response?.status === 401) {
                 logout();
                 return;
