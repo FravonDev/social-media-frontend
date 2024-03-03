@@ -19,6 +19,7 @@ export const RouterComponent = () => {
                     <Route path="/" element={<div>feed </div>} />
                     <Route path="/profile/:username" element={<div>profile</div>} />
                     <Route path="/post/:id" element={<div>post</div>} />
+                    <Route path="/chat" element={<div>chat</div>} />
                 </Route>
 
                 {/* not found */}

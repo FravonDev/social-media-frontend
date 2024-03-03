@@ -13,11 +13,11 @@ export default {
         grayLoading: "#D9D9D9",
         blue: "#3574D3",
       },
+     
     },
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
       comfortaa: ["Comfortaa", "cursive"],
-      inter: ["Inter", "sans-serif"],
     },
     boxShadow: {
       shaForm: "0px 0px 70px 15px rgba(94,94,94,0.1)",
